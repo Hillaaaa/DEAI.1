@@ -6,9 +6,15 @@ def spam_detector(message):
 
     for word in words:
         if word in spam_words:
-            return "This is spam"
+            return {
+                "result": "spam",
+                "matched_word": word,
+            }
 
-    return "This is safe"
+    return {
+        'result': "safe",
+        'matched_word': None
+    }
 
 
 message = input("Enter your message: ")
